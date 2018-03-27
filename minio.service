@@ -1,0 +1,17 @@
+[Unit]
+Description=Minio Storage Daemon
+Wants=network.target
+After=syslog.target
+After=network.target
+
+[Service]
+User=minio
+RestartSec=10s
+Restart=always
+Type=simple
+ExecStart=/usr/local/bin/minio server /data
+
+[Install]
+WantedBy=default.target
+Alias=minio.service
+
