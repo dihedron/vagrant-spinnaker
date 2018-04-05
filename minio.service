@@ -9,7 +9,7 @@ User=minio
 RestartSec=10s
 Restart=always
 Type=simple
-ExecStart=/usr/local/bin/minio server /data
+ExecStart=/usr/local/bin/minio server --address :9001 /data
 
 [Install]
 WantedBy=default.target
